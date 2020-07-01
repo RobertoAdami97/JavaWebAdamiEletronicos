@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-header text-center m-0 p-0">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/deleteAndAlterContato">Contatos Cadastrados</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                    <p class="display-4" style="font-size: 2.2rem;">Cadastrar Contato</p> 
+                </div>
+            </div>
+            <div class="card-body mt-4">
+                <div class="container">
+                    <form method="POST" action="/cadastrarContato">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="nome">Nome</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="nome" name="nome" placeholder="Nome completo" th:value="${contato.nome}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="email">E-mail</label>
+                                <input type="email" class="form-control shadow-sm  bg-white rounded font-weight-light" id="email" name="email" placeholder="exemple@gmail.com" th:value="${contato.email}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="celular">Celular</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="celular" name="celular" placeholder="(xx) xxxxx-xxxx" th:value="${contato.celular}">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="telefone">Telefone</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" th:value="${contato.telefone}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="endereco">Endereço</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="endereco" name="endereco" placeholder="Rua dos Bobos Nº0" th:value="${contato.endereco}">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="cidade">Cidade</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="cidade" name="cidade" th:value="${contato.cidade}">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="cep">CEP</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="cep" name="cep" placeholder="00000-000" th:value="${contato.cep}">
+                            </div>
+                        </div>
+                        <div class="form-row mt-4">
+                            <input type="hidden" name="id" th:value="${contato.id}">
+                            <input type="submit" class="btn btn-success" id="botao" value="Cadastrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center mt-5" style="bottom: 0px; position: relative;">
+                All Rights Reserved &copy;
+            </div>
+        </div>
+    </div>    
+
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>

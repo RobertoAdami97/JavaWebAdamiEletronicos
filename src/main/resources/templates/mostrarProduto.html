@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletroeletronicos</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-header text-center m-0 p-0">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/">Início</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/deleteAndAlterProduto">Voltar</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/cadastrarProduto">Cadastrar Produto</a>
+                        </li>
+                        <li class="nav-link font-weight-light" style="font-size: 1.4rem;">
+                            <a class="nav-item" href="/cadastrarContato">Contate-nos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                  <p class="display-4 font-weight-light" style="font-size: 2.5rem;">Detalhes do Produto</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="list-group m-4">
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <p class="mb-1 font-weight-normal" style="font-size: 1.5rem;">Nome do Produto</p>
+                        </div>
+                        <p class="mb-1 font-weight-light" style="font-size: 1.2rem" th:text="${eletronicos.nome}"></p>
+                    </div>
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <p class="mb-1 font-weight-normal" style="font-size: 1.5rem;">Preço</p>
+                        </div>
+                        <p class="mb-1 font-weight-light" style="font-size: 1.2rem" th:text="${eletronicos.preco}"></p>
+                    </div>
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <p class="mb-1 font-weight-normal" style="font-size: 1.5rem;">Código do Produto</p>
+                        </div>
+                        <p class="mb-1 font-weight-light" style="font-size: 1.2rem" th:text="${eletronicos.codigo}"></p>
+                    </div>
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <p class="mb-1 font-weight-normal" style="font-size: 1.5rem;">Quantidade</p>
+                        </div>
+                        <p class="mb-1 font-weight-light" style="font-size: 1.2rem" th:text="${eletronicos.quantidade}"></p>
+                    </div>
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <p class="mb-1 font-weight-normal" style="font-size: 1.5rem;">Descrição</p>
+                        </div>
+                        <p class="mb-1 font-weight-light" style="font-size: 1.2rem" th:text="${eletronicos.descricao}"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center" style="bottom: 0;position: relative; width: 100%;">
+              All Rights Reserved &copy;
+          </div>
+        </div>
+    </div>
+
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>

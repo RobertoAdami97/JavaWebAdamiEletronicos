@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Clientes</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-header text-center m-0 p-0">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/cadastrarProduto">Cadastrar Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/cadastrarContato">Contate-nos</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <p class="display-4" style="font-size: 2.2rem;">Gerenciamento de Produtos</p>
+                  <p class="font-weight-light" style="font-size: 1.3rem;">Abaixo é possível: editar, excluir e visualizar os produtos, desde que estejam cadastrados.</p>
+                </div>
+            </div>
+            <div class="card text-start">
+                <div class="card-header font-weight-light" style="font-size: 1.5rem;">
+                  Produtos Cadastrados
+                </div>
+                <div th:if="${listarEletronicos.size() > 0}">
+                  <p class="card-header font-weight-light" style="font-size: 1.3rem;">Nome do Produto</p>
+                    <div class="row" th:each="eletronicos : ${listarEletronicos}">
+                        <div class="col-md border">
+                            <a class="pl-4 mb-0 pb-0 font-weight-light" style="font-size: 1.2rem;" th:href="@{/mostrarProduto/{id}(id=${eletronicos.id})}" th:text="${eletronicos.nome}"></a>
+                        </div>
+                        <hr class="my-3">
+                        <div class="col-md border-bottom border-top">
+                          <a style="width: 4.5rem; height: 2.0rem;" class="btn btn-success btn-sm text-center m-2" th:href="@{/cadastrarProduto/{id}(id=${eletronicos.id})}">Editar</a>
+                          <a style="width: 4.5rem; height: 2.0rem;" class="btn btn-danger btn-sm" th:href="@{/deleteAndAlterProduto/{id}(id=${eletronicos.id})}">Deletar</a>
+                        </div>
+                        <div class="col border-bottom border-top"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted" style="bottom: 0;position: relative; width: 100%;">
+              Atualizado há 2 minutos
+          </div>
+        </div>
+    </div>
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>

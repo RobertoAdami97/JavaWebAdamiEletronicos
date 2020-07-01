@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Eletronicos</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-header text-center m-0 p-0">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/deleteAndAlterProduto">Produtos Cadastrados</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link font-weight-light" style="font-size: 1.4rem;" href="/cadastrarContato">Contate-nos</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <p class="display-4" style="font-size: 2.2rem;">Cadastro de Produtos</p> 
+                </div>
+            </div>
+            <div class="container">
+                <div class="card-body">
+                    <form method="POST" action="/cadastrarProduto">
+                        <div class="form-row">
+                            <div class="form-group col-sm">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="nome">Nome do Produto</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="nome" name="nome" th:value="${eletronicos.nome}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="preco">Preço</label>
+                                <input type="number" class="form-control shadow-sm  bg-white rounded font-weight-light" id="preco" name="preco" th:value="${eletronicos.preco}">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="codigo">Código do Produto</label>
+                                <input type="number" class="form-control shadow-sm  bg-white rounded font-weight-light" id="codigo" name="codigo" th:value="${eletronicos.codigo}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="quantidade">Quantidade de Produtos</label>
+                                <input type="number" class="form-control shadow-sm  bg-white rounded font-weight-light" id="quantidade" name="quantidade" th:value="${eletronicos.quantidade}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm">
+                                <label class="font-weight-light"  style="font-size: 1.3rem;" for="descricao">Descrição do Produto</label>
+                                <input type="text" class="form-control shadow-sm  bg-white rounded font-weight-light" id="descricao" rows="10" name="descricao" th:value="${eletronicos.descricao}"></input>
+                            </div>
+                        </div>
+                        <div class="form-row mt-3">
+                            <input type="hidden" name="id" th:value="${eletronicos.id}">
+                            <input type="submit" class="btn btn-success" id="botao" value="Cadastrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center mt-5">
+                All Rights Reserved &copy;
+            </div>
+        </div>
+    </div>
+    
+<!-- 
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-header text-center m-0 p-0">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/deleteAndAlterProduto">Produtos Cadastrados</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/cadastrarProduto">Cadastrar Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/contato">Contate-nos</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title">Cadastro de Produtos</h1> 
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <form method="POST" action="/cadastrarProduto">
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" th:value="${eletronicos.nome}">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="email">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="exemple@gmail.com" th:value="${eletronicos.email}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Ex: (xx) xxxxx-xxxx" th:value="${eletronicos.telefone}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua dos Fulanos nº0" th:value="${eletronicos.endereco}">
+                            </div>
+                        </div>
+                        <div class="form-row">  
+                            <div class="form-group col-md-7">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" name="cidade" th:value="${eletronicos.cidade}">
+                            </div>
+                      
+                            <div class="form-group col-md">
+                                <label for="cep">CEP</label>
+                                <input type="text" class="form-control" id="cep" name="cep" th:value="${eletronicos.cep}">
+                            </div>
+                        </div>
+                        <div class="form-row mt-3">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Eu li e aceito os termos e condições
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mt-3">
+                            <input type="hidden" name="id" th:value="${eletronicos.id}">
+                            <input type="submit" class="btn btn-success" id="botao" value="Enivar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center mt-5">
+                All Rights Reserved &copy;
+            </div>
+        </div>
+    </div> -->
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>
